@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Not Hesaplama Arayüzü </title>
+</head>
+<style>
+    body{
+        background-color: #FFE4E1;
+    }
+</style>
+<body>
+<p>
+    <label for="textfield1">Vize : </label>
+    <input type="text" name="textfield1" id="txtVize">
+</p>
+<p>
+    <label for="textfield2">Proje : </label>
+    <input type="text" name="textfield2" id="txtProje">
+</p>
+<p>
+    <label for="textfield3">Final : </label>
+    <input type="text" name="textfield3" id="txtFinal">
+    <input type="button" name="button" id="hesap" value="HESAPLA">
+</p>
+<p><label id="lblSonuc"></label>&nbsp;</p>
+
+
+<script>
+    var vize=document.getElementById("txtVize");
+    var proje=document.getElementById("txtProje");
+    var final=document.getElementById("txtFinal");
+    var btnHesap=document.getElementById("hesap");
+
+    btnHesap.onclick=function(){
+        var durum="";
+        var vizeNotu=Number(vize.value);
+        var projeNotu=Number(proje.value);
+        var finalNotu=Number(final.value);
+        var ortalama=(vizeNotu*0.4)+(finalNotu*0.5)+(projeNotu*0.1);
+        if(ortalama>=45)
+        {
+            durum="Tebrikler, bu dersten geçtiniz.";
+        }
+
+        else
+        {
+            durum="Not ortalamanız 45'in altında.Maalesef bu dersten kaldınız ";
+        }
+        document.getElementById("lblSonuc").innerHTML="Ortalamanız : "+ortalama+"<BR>"+durum;
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kayıt Olma Sayfası</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+</head>
+<style>
+    body{
+        background-color: #FFE4E1;
+
+    }
+    h2 {font-family:"Times New Roman",Times,serif;
+        color:#808080;}
+    h4{ font-family: "italic";
+        color:#808080}
+
+</style>
+<body>
+<div class="container pb-5">
+    <h2>YENİ KULLANICI FORMU</h2>
+    <hr />
+    <h4> Hoşgeldiniz...</h4>
+    <form action="ekle.php" method="POST">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" name=" UserName" required  placeholder="Adınız">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="SurName" required  placeholder="Soyadınız">
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+                <input type="email" class="form-control" name="Email" required placeholder="email adresiniz">
+            </div>
+
+
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <input type="password" id="password" class="form-control" name="Password" required  placeholder="Şifreniz">
+            </div>
+            <div class="col">
+                <input type="password" id="repassword" class="form-control" name="RePassword" required  placeholder="Şifreniz Tekrar">
+            </div>
+        </div>
+        <div class="row mt-5 float-right">
+            <input type="Submit" id="btn" name="kaydet" class="btn btn-light" value="Kaydol">
+        </div>
+
+    </form>
+
+
+
+
+
+
+
+
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        var errormessage="";
+        $("#btn").click(function(){
+            if($("#password").val()!=$("#repassword").val()){
+                errormessage+="<p>parolalar eşleşmiyor</p>";
+            }
+        });
+
+    });
+</script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>
